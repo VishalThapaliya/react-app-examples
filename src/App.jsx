@@ -1,14 +1,8 @@
-import './App.css'
-import Calculator from './components/calculator/Calculator'
-import Todo from './components/todos/Todo'
+import React from 'react'
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      {/* <Calculator /> */}
-      <Todo />
-    </>
+    <div>App</div>
   )
 }
 
