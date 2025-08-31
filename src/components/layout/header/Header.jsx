@@ -1,35 +1,33 @@
-import { NavLink, useLocation } from 'react-router-dom';
-import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
+import "./Header.css";
 
 const Header = () => {
-  const location = useLocation();
   const navItems = [
-    { id: 1, name: 'Home', path: '/'},
-    { id: 2, name: 'Applications', path: '/applications'},
-    { id: 3, name: 'About', path: '/about'},
-    { id: 4, name: 'Contact', path: '/contact'},
+    { id: 1, name: "Home", path: "/"},
+    { id: 2, name: "Applications", path: "/applications"},
+    { id: 3, name: "About", path: "/about"},
+    { id: 4, name: "Contact", path: "/contact"},
   ]
-  
   return (
     <header className="header">
-      <nav className="nav">
-        <NavLink  to="/" className="logo">
-          <span className="logo-text">React Applications</span>
-        </NavLink >
+      <div className="container">
+        <Link to="/" className='logo'>React Applications</Link>
 
-        <ul className="nav-list">
-          {navItems.map(({id, name, path}) => (
-            <li key={id} className='nav-item'>
-              <NavLink 
-                to={path}
-                className={`nav-link ${location.pathname === path ? 'active' : ''}`}
-              >
-                {name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <nav className="nav">
+          <ul>
+            {navItems.map(({ id, name, path }) => (
+              <li key={id}>
+                <NavLink 
+                  to={path} 
+                  className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                  {name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
