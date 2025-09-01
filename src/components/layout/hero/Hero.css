@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
-    background: linear-gradient(135deg, #0f0c29, #3a1c71, #614385);
+    color: #858C95;
+    background: linear-gradient(180deg, #858c95, #eef2feab, #614385);
     animation: backgroundAnimation 3s ease infinite;
     overflow: hidden;
     position: relative;
@@ -41,15 +41,15 @@
         animation: fadeInDown 1s ease-out forwards;
 
         .hero-title {
-            color: hsl(210 40% 98%;);
+            color: #354e83;
             font-size: 2rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.2;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
 
             .gradient-text {
-                background: linear-gradient(135deg, hsl(252, 95%, 63%), hsl(218, 93%, 57%), hsl(186, 90%, 50%));
+                background: linear-gradient(90deg, #6465f1, #48b4d5);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;

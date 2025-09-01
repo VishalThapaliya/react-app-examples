@@ -2,14 +2,14 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1rem 0;
+    background: linear-gradient(90deg, #bec1c3d1, #dedfe395);;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     z-index: 1000;
     transition: background-color 0.3s ease;
 
     .container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -17,14 +17,14 @@
         padding: 0 2rem;
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #00bcb4;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: linear-gradient(165deg, #eef2fe, #f7f9ff, #fff);
             text-decoration: none;
             transition: color 0.3s ease;
 
             &:hover {
-                color: #00e0ff;
+                color: #6366F1;
             }
         }
 
@@ -39,7 +39,7 @@
                     margin-left: 2.5rem;
 
                     .nav-link {
-                        color: #b0c4de;
+                        color: linear-gradient(180deg, #6366f1, #8a5cf5);
                         text-decoration: none;
                         font-size: 1.1rem;
                         font-weight: 500;
@@ -48,11 +48,11 @@
                         transition: color 0.3s ease;
 
                         &.active {
-                            color: #fff;
+                            color: #48B4D5;
                         }
 
                         &:hover {
-                            color: #fff;
+                            color: #48B4D5;
 
                             &::after {
                                 width: 100%;
