@@ -1,7 +1,8 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import "./Header.css";
 
 const Header = () => {
+  const location = useLocation();
   const navItems = [
     { id: 1, name: "Home", path: "/"},
     { id: 2, name: "Applications", path: "/applications"},
@@ -10,24 +11,24 @@ const Header = () => {
   ]
   return (
     <header className="header">
-      <div className="container">
-        <Link to="/" className='logo'>React Applications</Link>
+      <nav className="nav">
+        <Link to="/" className='logo'>
+          <span className="logo-text">AppGateway</span>
+        </Link>
 
-        <nav className="nav">
-          <ul>
-            {navItems.map(({ id, name, path }) => (
-              <li key={id}>
-                <NavLink 
-                  to={path} 
-                  className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                >
-                  {name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+        <ul className='nav-list'>
+          {navItems.map(({ id, name, path }) => (
+            <li key={id} className='nav-item'>
+              <NavLink 
+                to={path} 
+                className={`nav-link ${location.path === path ? 'active' : ''}`}
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 }
