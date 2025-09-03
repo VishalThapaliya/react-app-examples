@@ -1,9 +1,6 @@
-import React from 'react';
-import './Hero.css';
-// import heroBackground from '../../../assets/react.svg';
-// import heroBackground from '../../../assets/heroBackground.png';
-import heroBackground from '../../../assets/heroImage.png';
 import { Link } from 'react-router-dom';
+import './Hero.css';
+import heroBackground from '../../../assets/images/heroImage.png';
 
 const Hero = () => {
   return (
