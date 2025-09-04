@@ -80,7 +80,7 @@ const FeaturedApps = () => {
 
                             <div className="app-tags">
                                 {app.tags.map(tag => (
-                                    <span className="app-tag">{tag}</span>
+                                    <span className="app-tag" key={tag}>{tag}</span>
                                 ))}
                             </div>
                         </div>
