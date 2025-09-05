@@ -192,6 +192,16 @@ const ApplicationsPage = () => {
   const visibleApplications = filteredApplications.slice(0, visibleApps);
   const hasMoreApps = visibleApps < filteredApplications.length;
 
+  // load more applications
+  const loadMoreApps = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setVisibleApps(prev => prev + visibleApps);
+      setLoading(false);
+    }, 800)
+  };
+
   return (
     <div className="application-page">
       <Header />
@@ -224,6 +234,7 @@ const ApplicationsPage = () => {
                   <button 
                     key={id}
                     className={`category-btn ${selectedCategory === id ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory(id)}
                   >
                     {name}
                   </button>
@@ -272,8 +283,12 @@ const ApplicationsPage = () => {
 
             {hasMoreApps && (
               <div className='load-more-section'>
-                <button className="btn-load-more">
-                  {loading ? (<><div className="loading-spinner">Loading...</div></>) : ('Load More Applications')}
+                <button 
+                  className="btn-load-more"
+                  onClick={loadMoreApps}
+                  disabled={loading}
+                >
+                  {loading ? (<><div className="loading-spinner"></div> Loading...</>) : ('Load More Applications')}
                 </button>
               </div>
             )}
