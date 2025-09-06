@@ -132,8 +132,8 @@ const AboutPage = () => {
                 Whether you need a full-stack developer or React specialist, let's discuss how we can collaborate.
               </p>
               <div className="cta-actions">
-                <a href="mailto:vishal.thapaliya@gmail.com" className="btn-cta-primary">Get In Touch</a>
-                <a href="https://bishal-thapaliya.netlify.app/about" className="btn-cta-secondary">View Portfolio</a>
+                <a href="mailto:vishal.thapaliya@gmail.com" target='_blank' className="btn-cta-primary">Get In Touch</a>
+                <a href="https://bishal-thapaliya.netlify.app/about" target='_blank' className="btn-cta-secondary">View Portfolio</a>
               </div>
             </div>
           </div>

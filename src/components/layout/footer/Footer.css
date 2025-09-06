@@ -94,3 +94,24 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-2xl) 0 0;
+
+        .footer-container {
+            padding: 0 var(--spacing-md);
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-2xl);
+
+                .footer-links {
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-lg);
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
