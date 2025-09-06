@@ -1,5 +1,6 @@
 import Header from '../../components/layout/header/Header';
 import Footer from '../../components/layout/footer/Footer';
+import profileImage from '../../assets/images/profile_image.jpeg'
 import './AboutPage.css';
 
 const AboutPage = () => {
@@ -47,7 +48,7 @@ const AboutPage = () => {
           <div className="container">
             <div className="profile-section">
               <div className="profile-image-wrapper">
-                <img src="" alt="" />
+                <img src={profileImage} alt="Profile Image" className='profile-image'/>
                 <div className="profile-glow"></div>
               </div>
 
@@ -91,7 +92,7 @@ const AboutPage = () => {
                     <span className="skill-percentage">{level}%</span>
                   </div>
                   <div className="skill-bar">
-                    <div className="skill-progress" style={{ width: `${level}` }}></div>
+                    <div className="skill-progress" style={{ width: `${level}%` }}></div>
                   </div>
                 </div>
               ))}
@@ -131,8 +132,8 @@ const AboutPage = () => {
                 Whether you need a full-stack developer or React specialist, let's discuss how we can collaborate.
               </p>
               <div className="cta-actions">
-                <a href="mailto:vishal.thapaliya@gmail.com" className="btn-cta-primary">Get In Touch</a>
-                <a href="https://bishal-thapaliya.netlify.app/about" className="btn-cta-secondary">View Portfolio</a>
+                <a href="mailto:vishal.thapaliya@gmail.com" target='_blank' className="btn-cta-primary">Get In Touch</a>
+                <a href="https://bishal-thapaliya.netlify.app/about" target='_blank' className="btn-cta-secondary">View Portfolio</a>
               </div>
             </div>
           </div>
