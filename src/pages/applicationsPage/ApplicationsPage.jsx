@@ -253,7 +253,7 @@ const ApplicationsPage = () => {
             </div>
 
             <div className="apps-grid">
-              {visibleApplications.map(({ id, title, description, category, tags, image, demoUrl, githubUrl, featured }, index) => (
+              {visibleApplications.map(({ id, title, description, tags, image, demoUrl, githubUrl, featured }, index) => (
                 <div key={id} className={`app-card ${featured ? 'featured' : ''}`} style={{ animationDelay: `${index * 0.1}s`}}>
                   { featured && <div className='featured-badge'>Featured</div> }
 
