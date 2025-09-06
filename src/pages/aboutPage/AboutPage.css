@@ -1,0 +1,195 @@
+.about-page {
+    min-height: 100vh;
+    background: var(--background);
+
+    .about-main {
+        padding-top: 0;
+
+        .about-hero {
+            background: linear-gradient(135deg, var(--surface) 0%, rgba(99, 102, 241, 0.05) 100%);
+            padding: var(--spacing-3xl) 0;
+            
+            .profile-section {
+                display: flex;
+                align-items: center;
+                gap: var(--spacing-3xl);
+                max-width: 1250px;
+                margin: 0 auto;
+                padding: 0 var(--spacing-lg);
+
+                .profile-image-wrapper {
+                    z-index: 1;
+                    position: relative;
+                    flex-shrink: 0;
+                    animation: scaleIn 0.8s ease-out;
+
+                    .profile-image {
+                        height: 300px;
+                        width: 300px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 4px solid var(--background);
+                        box-shadow: var(--shadow-xl);
+                        transition: transform var(--transition-normal);
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .profile-glow {
+                        position: absolute;
+                        top: -20px;
+                        left: -20px;
+                        right: -20px;
+                        bottom: -20px;
+                        background: var(--gradient-primary);
+                        border-radius: 50%;
+                        z-index: -1;
+                        opacity: 0.1;
+                        filter: blur(20px);
+                        animation: pulse 3s ease-in-out infinite;
+                    }
+                }
+
+                .profile-content {
+                    flex: 1;
+                    animation: slideUp 0.8s ease-out 0.2s both;
+
+                    .profile-title {
+                        font-size: var(--font-size-5xl);
+                        font-weight: 700;
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        color: transparent;
+                        margin-bottom: var(--spacing-sm);
+                    }
+
+                    .profile-subtitle {
+                        font-size: var(--font-size-xl);
+                        font-weight: 500;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--spacing-lg);
+                    }
+
+                    .profile-description {
+                        font-size: var(--font-size-lg);
+                        line-height: 1.7;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--spacing-2xl);
+                    }
+
+                    .profile-stats {
+                        display: flex;
+                        gap: var(--spacing-2xl);
+
+                        .stat-item {
+                            text-align: center;
+
+                            .stat-number {
+                                display: block;
+                                font-size: var(--font-size-3xl);
+                                font-weight: 700;
+                                color: var(--primary);
+                                margin-bottom: var(--spacing-xs);
+                            }
+
+                            .stat-label {
+                                display: block;
+                                font-size: var(--font-size-sm);
+                                color: var(--text-muted);
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .skills-section,
+        .projects-section {
+            padding: var(--spacing-3xl) 0;
+
+            .section-title {
+                text-align: center;
+                font-size: var(--font-size-4xl);
+                font-weight: 700;
+                margin-bottom: var(--spacing-3xl);
+                background: var(--gradient-primary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 var(--spacing-lg);
+
+                .skill-item {
+                    background: var(--background);
+                    padding: var(--spacing-lg);
+                    border-radius: var(--radius-lg);
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow-sm);
+                    transition: all var(--transition-normal);
+                    animation: fadeIn 0.6s ease-out both;
+
+                    &:hover {
+                        transform: translateY(-4px);
+                        box-shadow: var(--shadow-lg);
+                    }
+
+                    .skill-info {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: var(--spacing-sm);
+
+                        .skill-name {
+                            font-weight: 600;
+                            color: var(--text-primary);
+                        }
+
+                        .skill-percentage {
+                            font-size: var(--font-size-sm);
+                            color: var(--primary);
+                            font-weight: 600;
+                        }
+                    }
+
+                    .skill-bar {
+                        height: 8px;
+                        background: var(--surface);
+                        border-radius: var(--radius-sm);
+                        overflow: hidden;
+
+                        .skill-progress {
+                            height: 100%;
+                            background: var(--gradient-primary);
+                            border-radius: var(--radius-sm);
+                            transition: width 1s ease-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+}
