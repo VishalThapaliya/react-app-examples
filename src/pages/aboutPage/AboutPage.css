@@ -266,6 +266,78 @@
 
             }
         }
+
+        .contact-cta {
+            background: linear-gradient(135deg, var(--surface) 0%, rgba(139, 92, 246, 0.5) 100%);
+            padding: var(--spacing-3xl) 0;
+
+            .cta-content {
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 var(--spacing-lg);
+
+                .cta-title {
+                    font-size: var(--font-size-4xl);
+                    font-weight: 700;
+                    margin-bottom: var(--spacing-lg);
+                    background: var(--gradient-accent);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    color: transparent;
+                }
+
+                .cta-description {
+                    font-size: var(--font-size-lg);
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    margin-bottom: var(--spacing-2xl);
+                }
+
+                .cta-actions {
+                    display: flex;
+                    justify-content: center;
+                    gap: var(--spacing-lg);
+                    flex-wrap: wrap;
+
+                    .btn-cta-primary {
+                        background: var(--gradient-accent);
+                        color: var(--text-inverse);
+                        padding: var(--spacing-md) var(--spacing-2xl);
+                        border-radius: var(--radius-lg);
+                        font-weight: 600;
+                        text-decoration: none;
+                        transition: all var(--transition-normal);
+                        box-shadow: var(--shadow-md);
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: var(--shadow-lg), var(--shadow-pink-glow);
+                        }
+                    }
+
+                    .btn-cta-secondary {
+                        background: var(--background);
+                        color: var(--text-primary);
+                        padding: var(--spacing-md) var(--spacing-2xl);
+                        border: 1px solid var(--primary);
+                        border-radius: var(--radius-lg);
+                        font-weight: 600;
+                        text-decoration: none;
+                        transition: all var(--transition-normal);
+
+                        &:hover {
+                            background: var(--primary);
+                            color: var(--text-inverse);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    
+                }
+            }
+        }
     }
 }
 
