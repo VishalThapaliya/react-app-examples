@@ -1,4 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import logoImage from '../../../assets/images/logo.png';
 import "./Header.css";
 
 const Header = () => {
@@ -13,6 +14,9 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <Link to="/" className='logo'>
+          <span className="logo-image">
+            <img src={logoImage} alt="Logo Image" />
+          </span>
           <span className="logo-text">Reactications</span>
         </Link>
 

@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import logoImage from '../../../assets/images/logo.png';
+
 import './Footer.css';
 
 const Footer = () => {
@@ -41,6 +43,9 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-brand">
                     <Link to="/" className="footer-logo">
+                         <span className="footer-logo-image">
+                            <img src={logoImage} alt="Logo Image" />
+                        </span>
                         <span className="footer-logo-text">
                             Reactications
                         </span>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ApplicationsPage.css';
 import Header from '../../components/layout/header/Header';
+import Footer from '../../components/layout/footer/Footer';
 import appImage from '../../assets/images/react.svg';
 
 
@@ -303,6 +304,8 @@ const ApplicationsPage = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   )
 }
