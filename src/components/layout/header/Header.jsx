@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <Link to="/" className='logo'>
-          <span className="logo-text">AppGateway</span>
+          <span className="logo-text">Reactications</span>
         </Link>
 
         <ul className='nav-list'>

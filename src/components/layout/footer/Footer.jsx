@@ -42,7 +42,7 @@ const Footer = () => {
                 <div className="footer-brand">
                     <Link to="/" className="footer-logo">
                         <span className="footer-logo-text">
-                            AppGateway
+                            Reactications
                         </span>
                     </Link>
                     <p className="footer-tagline">
