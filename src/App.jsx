@@ -5,6 +5,8 @@ import ApplicationsPage from './pages/applicationsPage/ApplicationsPage'
 import AboutPage from './pages/aboutPage/AboutPage';
 import ContactPage from './pages/contactPage/ContactPage';
 
+import GradientGenerator from './featuredApps/gradientGenerator/GradientGenerator';
+
 const App = () => {
   return (
     <Router>
@@ -13,6 +15,7 @@ const App = () => {
         <Route path='/applications' element={<ApplicationsPage />}/>
         <Route path='/about' element={<AboutPage />}/>
         <Route path='/contact' element={<ContactPage />} />
+        <Route path='/testing' element={<GradientGenerator />} />
       </Routes>
     </Router>
   )
