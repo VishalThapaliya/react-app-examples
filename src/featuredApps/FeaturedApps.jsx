@@ -1,52 +1,68 @@
 import { Link } from 'react-router-dom';
 import './FeaturedApps.css';
-import appImage from '../assets/images/react.svg';
+
+// app images
+import conceptionUIImage from '../assets/images/image_conceptionUI.png';
+import portfolioBishalImage from '../assets/images/image_portfolio_Bishal.png';
+import ecommerceCardImage from '../assets/images/image_ecommerce_products.png';
+import googleGeminiImage from '../assets/images/image_google_gemini.png';
+import portfolioJonathanImage from '../assets/images/image_portfolio_jonathan.png';
+import peugeotCarsImage from '../assets/images/image_peugeot_cars.gif';
 
 const featuredApps = [
     {
         id: 1,
-        title: 'E-commerce Store',
-        description: 'Full-featured online store with cart functionality, payment processing, and admin panel.',
-        tags: ['React', 'Firebase', 'PWA'],
-        image: `${appImage}`,
-        demoUrl: '/apps/dummy-link',
-        githubUrl: 'https://github.com/VishalThapaliya/'
+        title: 'Conception UI',
+        description: 'Describe your app concept in plain language and watch as AI transforms your words into beautiful, interactive mockups in seconds.',
+        tags: ['React', 'JS', 'CSS'],
+        image: `${conceptionUIImage}`,
+        demoUrl: 'https://text-to-ui.netlify.app/',
+        githubUrl: 'https://github.com/VishalThapaliya/text-to-design'
     },
     {
         id: 2,
-        title: 'Social Media Feed',
-        description: 'Modern social media interface with infinite scroll, likes, and real-time comments.',
-        tags: ['React', 'Firebase', 'PWA'],
-        image: `${appImage}`,
-        demoUrl: '/apps/dummy-link',
-        githubUrl: 'https://github.com/VishalThapaliya/'
+        title: 'Bishal Thapaliya',
+        description: 'A modern portfolio website created using React JS, CSS, and react-router to manage multi-page navigations.',
+        tags: ['React', 'JS', 'CSS'],
+        image: `${portfolioBishalImage}`,
+        demoUrl: 'https://bishal-thapaliya.netlify.app/about',
+        githubUrl: 'https://github.com/VishalThapaliya/react-resume-portfolio'
     },
     {
         id: 3,
-        title: 'Task Management Dashboard',
-        description: 'A modern task management application with real-time updates and team collaboration features.',
+        title: 'Ecommerce Product Card',
+        description: 'An elegant product card UI with multiple features such as updating DOM elements based on the stock availablity.',
         tags: ['React', 'Javascipt', 'CSS'],
-        image: `${appImage}`,
-        demoUrl: '/apps/dummy-link',
-        githubUrl: 'https://github.com/VishalThapaliya/'
+        image: `${ecommerceCardImage}`,
+        demoUrl: 'https://ecommerce-product-card.netlify.app/',
+        githubUrl: 'https://github.com/VishalThapaliya/ecommerce-product-card'
     },
     {
         id: 4,
-        title: 'Weather App',
-        description: 'Beautiful weather application with location-based forecasts and interactive maps.',
-        tags: ['React', 'CSS', 'PWA'],
-        image: `${appImage}`,
-        demoUrl: '/apps/dummy-link',
-        githubUrl: 'https://github.com/VishalThapaliya/'
+        title: 'Google Gemini',
+        description: 'Google Gemini is a clone generative AI application of Gemini from Google that generates the response based on the prompts given by the users.',
+        tags: ['React', 'JS', 'CSS', 'GEMINI API'],
+        image: `${googleGeminiImage}`,
+        demoUrl: 'https://bibi-gemini-clone.netlify.app/',
+        githubUrl: 'https://github.com/VishalThapaliya/google-gemini-clone'
     },
     {
         id: 5,
-        title: 'Social Media Feed',
-        description: 'Modern social media interface with infinite scroll, likes, and real-time comments.',
-        tags: ['React', 'Firebase', 'PWA'],
-        image: `${appImage}`,
-        demoUrl: '/apps/dummy-link',
-        githubUrl: 'https://github.com/VishalThapaliya/'
+        title: 'Jonathan Tejas Portfolio',
+        description: 'A modern responsive portfolio application developed in React and Tailwind CSS.',
+        tags: ['React', 'JavaScript', 'Tailwind', 'CSS'],
+        image: `${portfolioJonathanImage}`,
+        demoUrl: 'https://portfolio-jonathan-tejas.netlify.app/',
+        githubUrl: 'https://github.com/VishalThapaliya/portfolio-jonathan-tajes'
+    },
+    {
+        id: 6,
+        title: 'Peugeot Cars',
+        description: 'A landing page of Peugeot cars with a collection of car image carousal effect.',
+        tags: ['React', 'JavaScript', 'CSS'],
+        image: `${peugeotCarsImage}`,
+        demoUrl: 'https://bibi-cars.netlify.app/',
+        githubUrl: 'https://github.com/VishalThapaliya/react-car-landing-page'
     },
 ]
 const FeaturedApps = () => {
@@ -68,8 +84,8 @@ const FeaturedApps = () => {
 
                             <div className="app-overlay">
                                 <div className="app-actions">
-                                    <a href={app.demoUrl} className="btn-demo">Live Demo</a>
-                                    <a href={app.githubUrl} className='btn-code'>View Code</a>
+                                    <a href={app.demoUrl} className="btn-demo" target='_blank'>Live Demo</a>
+                                    <a href={app.githubUrl} className='btn-code' target='_blank'>View Code</a>
                                 </div>
                             </div>
                         </div>
