@@ -1,0 +1,158 @@
+section {
+  padding: 2rem;
+  max-width: 100vw;
+  margin: auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+input,
+select {
+  background: rgba(0, 0, 0, 0.08);
+  color: #111;
+  backdrop-filter: blur(8px);
+}
+
+input::placeholder {
+  color: #555;
+}
+
+button {
+  background: rgba(0, 0, 0, 0.1);
+  color: #111;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.gradient-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gradient-card {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Copy Button */
+.gradient-card button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.3);
+  color: #111;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gradient-card button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Load More Button */
+.text-center button {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+.text-center button:hover {
+  background: rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.mt-8 {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gradient-card {
+    width: 100%;
+    height: 180px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
