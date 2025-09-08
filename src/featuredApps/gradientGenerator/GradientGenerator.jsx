@@ -66,7 +66,7 @@ const GradientGenerator = () => {
     <section>
       <header>
         <div className="logo-title">
-          <h1>Random Gradient Generator</h1>
+          <h1>🎨 Random Gradient Generator</h1>
         </div>
 
         <div className="controls">
@@ -77,7 +77,7 @@ const GradientGenerator = () => {
             <option value="conic">Conic</option>
           </select>
 
-          <button onClick={generateGradients}>Generate</button>
+          <button onClick={generateGradients}>Refresh</button>
         </div>
       </header>
 
