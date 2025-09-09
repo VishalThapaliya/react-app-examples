@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import './GradientGenerator.css';
 
 const GradientGenerator = () => {
-  const [num, setNum] = useState(9);
+  const [num, setNum] = useState(12);
   const [type, setType] = useState('linear');
-  const [gradientColors, setGradientColors] = useState([]);
-  const [displayCount, setDisplayCount] = useState(9);
+  const [gradientCollections, setGradientCollections] = useState([]);
+  const [displayCount, setDisplayCount] = useState(12);
 
-  const displayedGradients = gradientColors.slice(0, displayCount);
-  const shouldShowLoadMore = displayCount < gradientColors.length;
+  const displayedGradients = gradientCollections.slice(0, displayCount);
+  const showLoadMore = displayCount < gradientCollections.length;
 
-  const getHexValue = () => {
+  const getHexColor = () => {
     const rgb = 255 * 255 * 255;
     const random = Math.floor(Math.random() * rgb);
     const hexValue = random.toString(16);
     const colorCode = hexValue.padEnd(6, '0');
     return `#${colorCode}`;
-  }
+  };
 
   const generateGradients = () => {
     let colors = [];
 
-    for (let i = 0; i < num; i++ ) {
+    for(let i = 0; i < num; i++) {
       const degree = Math.floor(Math.random() * 360);
-      const color1 = getHexValue();
-      const color2 = getHexValue();
+      const color1 = getHexColor();
+      const color2 = getHexColor();
 
       if(type === 'linear') {
         colors.push({
@@ -40,66 +40,98 @@ const GradientGenerator = () => {
         colors.push({
           gradient: `conic-gradient(from ${degree}deg, ${color1}, ${color2})`,
           css: `background: conic-gradient(from ${degree}deg, ${color1}, ${color2})`
-        });
+        })
       }
     }
 
-    setGradientColors(colors);
-    setDisplayCount(Math.min(9, num));
-  }
+    setGradientCollections(colors);
+    setDisplayCount(Math.min(12, num));
+  };
 
   const loadMoreGradients = () => {
-    const newCount = Math.min(displayCount + 9, gradientColors.length);
+    const newCount = Math.min(displayCount + 12, gradientCollections.length);
     setDisplayCount(newCount);
   }
 
-  const handleCopy = (css) => {
+  const copyCss = (css) => {
     navigator.clipboard.writeText(css);
-    alert('Code Copied!');
+
+    const toast = document.createElement('div');
+    toast.textContent = 'Code Copied Successfully!';
+    toast.className = 'toast-notification';
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      if(document.body.contains(toast)) {
+        document.body.removeChild(toast);
+      }
+    }, 3000);
   }
 
   useEffect(() => {
     generateGradients();
-  }, [num, type]);
+  }, []);
 
   return (
-    <section>
-      <header>
-        <div className="logo-title">
-          <h1>🎨 Random Gradient Generator</h1>
-        </div>
-
-        <div className="controls">
-          <input type="number" value={num} onChange={(e) => setNum(e.target.value)}/>
-          <select value={type} onChange={(e) => setType(e.target.value)}>
-            <option value="linear">Linear</option>
-            <option value="radial">Radial</option>
-            <option value="conic">Conic</option>
-          </select>
-
-          <button onClick={generateGradients}>Refresh</button>
-        </div>
-      </header>
-
-      <div className="gradient-grid">
-        {displayedGradients.map((color, index) => (
-          <div 
-            key={index} 
-            className='gradient-card'
-            style={{ background: color.gradient, animationDelay: `${index * 0.01}s` }}>
-            <button onClick={() => handleCopy(color.css)}>Copy</button>
-          </div>
-        ))}
+    <section className="gradient-generator-container">
+      <div className="background-elements">
+        <div className="floating-element element-1"></div>
+        <div className="floating-element element-2"></div>
+        <div className="floating-element element-3"></div>
       </div>
 
-      {shouldShowLoadMore && (
-        <div className="text-center">
-          <button onClick={loadMoreGradients}>Load More Gradients</button>
-        </div>
-      )}
+      <div className="content-wrapper">
+        <header className="gradient-header">
+          <div className="logo-container">
+            <div className="logo-icon">🎨</div>
+          </div>
+          <h1 className="main-title">Random Gradient Generator</h1>
+          <p className="subtitle">Create stunning gradients for your next project with just one click</p>
+        </header>
+        
+        <div className="controls">
+          <div className="control-group">
+            <input type="number" value={num} onChange={(e) => setNum(e.target.value)} className="number-input"/>
+          </div>
 
-      <div className='text-center mt-8'>
-        <p>Showing {displayCount} of {gradientColors.length} gradient colors.</p>
+          <div className="control-group">
+            <select value={type} onChange={(e) => setType(e.target.value)} className="select-input">
+              <option value="linear">Linear</option>
+              <option value="radial">Radial</option>
+              <option value="Conic">Conic</option>
+            </select>
+          </div>
+
+          <button onClick={generateGradients} className="generate-button">✨ Generate</button>
+        </div>
+
+        <div className="gradient-grid">
+          { displayedGradients.map((color, index) => (
+            <div key={index} className="gradient-card" style={{ background: color.gradient, animationDelay: `${index * 0.01}s`}}>
+              <div className="overlay"></div>
+              <div className="gradient-info">
+                <div className="gradient-type">{type}</div>
+              </div>
+              <button onClick={() => copyCss(color.css)} className="copy-button">📋 Copy</button>
+            </div>
+          ))}
+        </div>
+
+        { showLoadMore && (
+          <div className="load-more-container">
+            <button onClick={loadMoreGradients} className="load-more-button">Load More Gradients</button>
+          </div>
+        )}
+
+        <div className="stats-container">
+          <div className="stats-badege">
+            <span className="stats-text">
+              Showing 
+              <span className="stats-number">{displayCount}</span> of {' '} 
+              <span className="stats-number">{gradientCollections.length}</span> gradient colors
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   )
