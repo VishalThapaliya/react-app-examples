@@ -2,19 +2,22 @@ import { useState } from 'react';
 import './ApplicationsPage.css';
 import Header from '../../components/layout/header/Header';
 import Footer from '../../components/layout/footer/Footer';
+
+// images
+import imageGradients from '../../assets/images/image_gradient_generator.png';
 import appImage from '../../assets/images/react.svg';
 
 
 const applications = [
   {
     id: 1,
-    title: 'Task Management Dashboard',
-    description: 'A comprehensive task management application with real-time updates, team collaboration, and project tracking features.',
+    title: 'Random Gradient Generator',
+    description: 'Create stunning gradients for your next project with just one click',
     category: 'productivity',
-    tags: ['React', 'TypeScript', 'Socket.io', 'Redux'],
-    image: `${appImage}`,
-    demoUrl: '/apps/task-manager',
-    githubUrl: 'https://github.com/example/task-manager',
+    tags: ['React', 'JavaScript', 'CSS'],
+    image: `${imageGradients}`,
+    demoUrl: '/applications/gradient-generator',
+    githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
   {
@@ -263,7 +266,7 @@ const ApplicationsPage = () => {
                     <div className="app-overlay">
                       <div className="app-actions">
                         <a href={demoUrl} className="btn-demo">Live Demo</a>
-                        <a href={githubUrl} className="btn-code">View Demo</a>
+                        <a href={githubUrl} className="btn-code" target='_blank'>View Demo</a>
                       </div>
                     </div>
                   </div>

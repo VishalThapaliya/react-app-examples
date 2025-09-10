@@ -5,7 +5,10 @@ import ApplicationsPage from './pages/applicationsPage/ApplicationsPage'
 import AboutPage from './pages/aboutPage/AboutPage';
 import ContactPage from './pages/contactPage/ContactPage';
 
-import GradientGenerator from './featuredApps/gradientGenerator/GradientGenerator';
+// Import Applications
+import GradientGeneratorApp from './featuredApps/gradientGenerator/GradientGenerator';
+import CalculatorApp from './featuredApps/calculator/Calculator';
+
 
 const App = () => {
   return (
@@ -15,7 +18,10 @@ const App = () => {
         <Route path='/applications' element={<ApplicationsPage />}/>
         <Route path='/about' element={<AboutPage />}/>
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/testing' element={<GradientGenerator />} />
+
+        {/* Applications */}
+        <Route path='/applications/gradient-generator' element={<GradientGeneratorApp />} />
+        <Route path='/applications/calculator' element={<CalculatorApp />} />
       </Routes>
     </Router>
   )
