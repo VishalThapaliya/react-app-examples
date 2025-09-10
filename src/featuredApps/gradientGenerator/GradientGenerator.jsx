@@ -70,7 +70,7 @@ const GradientGenerator = () => {
 
   useEffect(() => {
     generateGradients();
-  }, []);
+  }, [type]);
 
   return (
     <section className="gradient-generator-container">
