@@ -8,7 +8,7 @@ import ContactPage from './pages/contactPage/ContactPage';
 // Import Applications
 import GradientGeneratorApp from './featuredApps/gradientGenerator/GradientGenerator';
 import CalculatorApp from './featuredApps/calculator/Calculator';
-
+import AvatarGeneratorApp from './featuredApps/avatarGenerator/AvatarGenerator';
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
         {/* Applications */}
         <Route path='/applications/gradient-generator' element={<GradientGeneratorApp />} />
         <Route path='/applications/calculator' element={<CalculatorApp />} />
+        <Route path='/applications/avatar-generator' element={<AvatarGeneratorApp />}/>
       </Routes>
     </Router>
   )

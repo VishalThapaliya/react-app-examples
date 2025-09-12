@@ -22,12 +22,12 @@ const applications = [
   },
   {
     id: 2,
-    title: 'E-commerce Store',
-    description: 'Full-featured online store with shopping cart, payment processing, inventory management, and admin dashboard.',
-    category: 'ecommerce',
-    tags: ['React', 'Redux', 'Stripe', 'Node.js'],
+    title: 'Avatar Generator',
+    description: 'Generate different types of avatar image at a signle place, and download it on just a click.',
+    category: 'productivity',
+    tags: ['React', 'JavaScript', 'CSS'],
     image: `${appImage}`,
-    demoUrl: '/apps/ecommerce',
+    demoUrl: '/applications/avatar-generator',
     githubUrl: 'https://github.com/example/ecommerce',
     featured: true
   },
