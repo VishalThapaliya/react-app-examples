@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import defaultUserImage from './images/defaultUserAvatar.png'
+import './AvatarGenerator.css';
+
+import defaultImage from './images/defaultUserAvatar.png';
 
 const avatarData = [
     {
@@ -40,42 +42,50 @@ const avatarData = [
     },
     {
         id: 7,
-        label: 'Portraits (Male)',
-        value: 'portraits_male',
+        label: 'Portrait (Male)',
+        value: 'portrait_male',
         url: 'https://randomuser.me/api/portraits/men'
     },
     {
         id: 8,
-        label: 'Portraits (Female)',
-        value: 'portraits_female',
+        label: 'Portrait (Female)',
+        value: 'portrait_female',
         url: 'https://randomuser.me/api/portraits/women'
     }
-]
+];
 
 const AvatarGenerator = () => {
     const [imgSrc, setImgSrc] = useState(null);
-    const [type, setType] = useState('avatar_male');
-    const [url, setUrl] = useState('');
+    const [imgType, setImgType] = useState('portrait_male');
 
     const generateAvatar = () => {
-        const avatarObj = avatarData.find(item => item.value === type);
-        
-        if(avatarObj.value === 'portraits_male' || avatarObj.value === 'portraits_female') {
+        const avatarObj = avatarData.find(item => item.value === imgType);
+
+        if(avatarObj.value === 'portrait_male' || avatarObj.value === 'portrait_female') {
             const random = Math.floor(Math.random() * 99) + 1;
             const imageUrl = `${avatarObj.url}/${random}.jpg`;
             setImgSrc(imageUrl);
         } else {
             const uniqueValue = Date.now();
-            const imageUrl = `${avatarObj.url}${uniqueValue}`
+            const imageUrl = `${avatarObj.url}${uniqueValue}`;
             setImgSrc(imageUrl);
         }
     };
 
-    const copyImageUrl = (url) => {
-        navigator.clipboard.writeText(url);
+    const downloadAvatar = (imageUrl) => {
+        const a = document.createElement('a');
+        a.href = imageUrl;
+        a.download = `${Date.now()}.jpg`;
+        a.click();
+        a.remove();
+    }
 
+    const copyUrl = (imgUrl) => {
+        navigator.clipboard.writeText(imgUrl);
+        
         const toast = document.createElement('div');
-        toast.textContent = 'Image URL copied!';
+        toast.className = 'toast-confirmation';
+        toast.textContent = 'Image Url Copied!!';
         document.body.appendChild(toast);
 
         setTimeout(() => {
@@ -83,43 +93,46 @@ const AvatarGenerator = () => {
                 document.body.removeChild(toast);
             }
         }, 3000);
-    };
-
-    const downloadImage = (imageURL) => {
-        const a = document.createElement('a');
-        a.href = imageURL;
-        a.download = `${Date.now()}.jpg`;
-        a.click();
-        a.remove();
     }
 
     useEffect(() => {
         generateAvatar();
-    }, [type])
-
+    }, [imgType]);
+     
   return (
-    <section>
-        <div className="main-container">
-            <div style={{ height: '80px', width: '80px'}}>
-                <img src={imgSrc || defaultUserImage} alt="Avatar image" />
+    <section className="avatar-generator-page">
+        <div className="avatar-generator-container">
+            <div className='avatar-image-wrapper'>
+                <img 
+                    src={imgSrc || defaultImage} 
+                    alt="Generated avatar image"  
+                    className='avatar-image'
+                />
             </div>
-
-            <h2>Avatar Generator</h2>
-
-            <select value={type} onChange={(e) => setType(e.target.value)}>
-                {avatarData.map(item => (
-                    <option key={item.id} value={item.value}>{item.label}</option>
+            
+            <h2 className="avatar-generator-title">✨ Avatar Generator ✨</h2>
+            <p className="avatar-generator-subtitle">Generate custom avatars and digital personas</p>
+        
+        
+            <select 
+                value={imgType} 
+                onChange={(e) => setImgType(e.target.value)}
+                className='avatar-type-selector'
+            >
+                {avatarData.map(({ id, value, label }) => (
+                    <option value={value} key={id}>{label}</option>
                 ))}
             </select>
 
-            <div>
-                {imgSrc}
+            <div className='avatar-url-display'>
+                URL:    
+                <p>{imgSrc}</p>
             </div>
 
-            <div>
-                <button onClick={generateAvatar}>Change</button>
-                <button onClick={() => downloadImage(imgSrc)}>Download</button>
-                <button onClick={() => copyImageUrl(imgSrc)}>Copy</button>
+            <div className='avatar-action-buttons'>
+                <button onClick={generateAvatar} className='btn-generate'>Change</button>
+                <button onClick={() => downloadAvatar(imgSrc)} className='btn-download'>Download</button>
+                <button onClick={() => copyUrl(imgSrc)} className='btn-copy'>Copy</button>
             </div>
         </div>
     </section>
