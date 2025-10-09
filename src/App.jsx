@@ -9,6 +9,7 @@ import ContactPage from './pages/contactPage/ContactPage';
 import GradientGeneratorApp from './featuredApps/gradientGenerator/GradientGenerator';
 import CalculatorApp from './featuredApps/calculator/Calculator';
 import AvatarGeneratorApp from './featuredApps/avatarGenerator/AvatarGenerator';
+import FileFolderExplorerApp from './featuredApps/fileFolderExplorer/FileFolderExplorer';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/applications/gradient-generator' element={<GradientGeneratorApp />} />
         <Route path='/applications/calculator' element={<CalculatorApp />} />
         <Route path='/applications/avatar-generator' element={<AvatarGeneratorApp />}/>
+        <Route path='/applications/file-folder-explorer' element={<FileFolderExplorerApp />}/>
       </Routes>
     </Router>
   )
