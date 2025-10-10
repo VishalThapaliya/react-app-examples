@@ -1,45 +1,45 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "public",
         "isFolder": true,
         "children": [
             {
-                "id": 1,
+                "id": "1.1",
                 "name": "vite.svg",
                 "isFolder": false
             }            
         ]
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "src",
         "isFolder": true,
         "children": [
             {
-                "id": 1,
+                "id": "2.1",
                 "name": "assets",
                 "isFolder": true,
                 "children": [
                     {
-                        "id": 1,
+                        "id": "2.1.1",
                         "name": "react.svg",
                         "isFolder": false
                     }
                 ]
             },            
             {
-                "id": 2,
+                "id": "2.2",
                 "name": "components",
                 "isFolder": true,
                 "children": [
                     {
-                        "id": 1,
+                        "id": "2.2.1",
                         "name": "homePage",
                         "isFolder": true,
                         "children": [
                             {
-                                "id": 1,
+                                "id": "2.2.1.1",
                                 "name": "HomePage.jsx",
                                 "isFolder": false
                             }        
@@ -48,39 +48,39 @@
                 ]
             },            
             {
-                "id": 3,
+                "id": "2.3",
                 "name": "App.jsx",
                 "isFolder": false
             },            
             {
-                "id": 4,
+                "id": "2.4",
                 "name": "App.css",
                 "isFolder": false
             },            
             {
-                "id": 5,
+                "id": "2.5",
                 "name": "index.css",
                 "isFolder": false
             },            
             {
-                "id": 5,
+                "id": "2.65",
                 "name": "main.jsx",
                 "isFolder": false
             }
         ]
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "index.html",
         "isFolder": false
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "package.json",
         "isFolder": false
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "README.md",
         "isFolder": false
     }
