@@ -53,21 +53,23 @@ const FileFolderExplorer = () => {
     }
 
   return (
-    <section className='file-folder-explorer'>
-        <div className="file-explorer-header">
-            <img 
-                src="https://files.softicons.com/download/toolbar-icons/flatastic-icons-part-1-by-custom-icon-design/png/512x512/folder.png" 
-                alt="File Explorer Icon" 
-                className='header-icon'
-            />
+    <section className='explorer-container'>
+        <div className='file-folder-explorer'>
+            <div className="file-explorer-header">
+                <img 
+                    src="https://files.softicons.com/download/toolbar-icons/flatastic-icons-part-1-by-custom-icon-design/png/512x512/folder.png" 
+                    alt="File Explorer Icon" 
+                    className='header-icon'
+                />
 
-            <div>
-                <h2 className='header-title'>File/Folder Explorer</h2>
-                <p className="header-subtitle">Manage your project structure</p>
+                <div>
+                    <h2 className='header-title'>File/Folder Explorer</h2>
+                    <p className="header-subtitle">Manage your project structure</p>
+                </div>
             </div>
-        </div>
 
-        <ListOfFilesAndFolders data={data} addNodeToTree={addNodeToTree} deleteNodeFromTree={deleteNodeFromTree} />
+            <ListOfFilesAndFolders data={data} addNodeToTree={addNodeToTree} deleteNodeFromTree={deleteNodeFromTree} />
+        </div>
 
     </section>
   )

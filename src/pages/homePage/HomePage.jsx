@@ -3,7 +3,7 @@ import Hero from '../../components/layout/hero/Hero';
 import FeaturedApps from '../../featuredApps/FeaturedApps';
 import Contact from '../../components/layout/contact/Contact';
 import Header from '../../components/layout/header/Header';
-import Footer from '../../components/layout/footer/footer';
+import Footer from '../../components/layout/footer/Footer';
 
 const HomePage = () => {
   return (

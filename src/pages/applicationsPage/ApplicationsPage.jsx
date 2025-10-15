@@ -31,7 +31,7 @@ const applications = [
     tags: ['React', 'JavaScript', 'CSS'],
     image: `${imageAvatarGenerator}`,
     demoUrl: '/applications/avatar-generator',
-    githubUrl: 'https://github.com/example/ecommerce',
+    githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
   {
@@ -41,8 +41,8 @@ const applications = [
     category: 'utility',
     tags: ['React', 'JavaScript', 'CSS', 'VSCode'],
     image: `${imageFileFolderExplorer}`,
-    demoUrl: '/apps/file-folder-explorer',
-    githubUrl: 'https://github.com/example/weather',
+    demoUrl: '/applications/file-folder-explorer',
+    githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/fileFolderExplorer',
     featured: true
   },
   {
@@ -64,7 +64,7 @@ const applications = [
     tags: ['React', 'D3.js', 'Charts', 'Analytics'],
     image: `${appImage}`,
     demoUrl: '/apps/analytics',
-    githubUrl: 'https://github.com/example/analytics',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -75,7 +75,7 @@ const applications = [
     tags: ['React', 'Framer Motion', 'CSS Grid', 'Responsive'],
     image: `${appImage}`,
     demoUrl: '/apps/portfolio',
-    githubUrl: 'https://github.com/example/portfolio',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -86,7 +86,7 @@ const applications = [
     tags: ['React', 'Draft.js', 'Cloud Storage', 'Markdown'],
     image: `${appImage}`,
     demoUrl: '/apps/notes',
-    githubUrl: 'https://github.com/example/notes',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -97,7 +97,7 @@ const applications = [
     tags: ['React', 'Socket.io', 'Real-time', 'File Upload'],
     image: `${appImage}`,
     demoUrl: '/apps/chat',
-    githubUrl: 'https://github.com/example/chat',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   // Additional applications for lazy loading demonstration
@@ -109,7 +109,7 @@ const applications = [
     tags: ['React', 'Chart.js', 'Local Storage', 'PWA'],
     image: `${appImage}`,
     demoUrl: '/apps/budget-tracker',
-    githubUrl: 'https://github.com/example/budget-tracker',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -120,7 +120,7 @@ const applications = [
     tags: ['React', 'Context API', 'Local Storage', 'PWA'],
     image: `${appImage}`,
     demoUrl: '/apps/recipe-manager',
-    githubUrl: 'https://github.com/example/recipe-manager',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -131,7 +131,7 @@ const applications = [
     tags: ['React', 'Chart.js', 'PWA', 'Fitness API'],
     image: `${appImage}`,
     demoUrl: '/apps/fitness-tracker',
-    githubUrl: 'https://github.com/example/fitness-tracker',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -142,7 +142,7 @@ const applications = [
     tags: ['React', 'Monaco Editor', 'Search', 'Tags'],
     image: `${appImage}`,
     demoUrl: '/apps/code-snippets',
-    githubUrl: 'https://github.com/example/code-snippets',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -153,7 +153,7 @@ const applications = [
     tags: ['React', 'Web Audio API', 'Visualizations', 'PWA'],
     image: `${appImage}`,
     demoUrl: '/apps/music-player',
-    githubUrl: 'https://github.com/example/music-player',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
   {
@@ -164,7 +164,7 @@ const applications = [
     tags: ['React', 'PDF Generation', 'Templates', 'Client Management'],
     image: `${appImage}`,
     demoUrl: '/apps/invoice-generator',
-    githubUrl: 'https://github.com/example/invoice-generator',
+    githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   }
 ];
