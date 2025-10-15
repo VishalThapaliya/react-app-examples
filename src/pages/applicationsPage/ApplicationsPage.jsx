@@ -19,7 +19,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'JavaScript', 'CSS'],
     image: `${imageGradients}`,
-    demoUrl: '/applications/gradient-generator',
+    demoUrl: '~/applications/gradient-generator',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
@@ -30,7 +30,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'JavaScript', 'CSS'],
     image: `${imageAvatarGenerator}`,
-    demoUrl: '/applications/avatar-generator',
+    demoUrl: '~/applications/avatar-generator',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
@@ -41,7 +41,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'JavaScript', 'CSS', 'VSCode'],
     image: `${imageFileFolderExplorer}`,
-    demoUrl: '/applications/file-folder-explorer',
+    demoUrl: '~/applications/file-folder-explorer',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/fileFolderExplorer',
     featured: true
   },
