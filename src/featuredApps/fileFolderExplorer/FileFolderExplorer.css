@@ -1,8 +1,172 @@
-.expand {
-    cursor: pointer;
+body {
+    margin: 0;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
 }
 
-.icon {
-    width: 25px;
+#root {
+    background: rgba(40, 40, 40, 0.4);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(60, 60, 60, 0.5);
+    width: 90%;
+    max-width: 80%;
+    overflow: hidden;
+    color: #e0e0e0;
+}
+
+.file-explorer-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 5px;
+}
+
+.header-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 10px;
+    filter: invert(60%) sepia(100%) saturate(200%) hue-rotate(180deg) brightness(120%);
+}
+
+.header-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.header-subtitle {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: 5px;
+}
+
+
+.node-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease-out;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.node-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.node-item-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.node-item.folder .node-name {
+    font-weight: 700;
+}
+
+.node-name {
     margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #c0c0c0;
+    width: calc(100% - 5%);
+}
+
+.folder-icon,
+.file-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.folder-icon {
+    filter: invert(80%) sepia(30%) saturate(1000%) hue-rotate(10deg) brightness(120%);
+}
+
+.file-icon {
+    filter: invert(70%) sepia(10%) saturate(200%) hue-rotate(0deg) brightness(110%);
+}
+
+.expand-toggle {
+    display: flex;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 20px;
+    text-align: center;
+    margin-right: 5px;
+    color: #4CAF50; /* Green for expanded/collapsed toggle */
+    transition: transform 0.2s ease;
+}
+
+.expand-toggle.collapsed {
+    transform: rotate(0deg);
+}
+
+.expand-toggle.expanded {
+    transform: rotate(0deg);
+}
+
+.toggle-icon {
+    width: 20px;
+}
+
+.node-actions {
+    display: flex;
+    gap: 8px; /* Space between icons */
+    opacity: 0; /* Hidden by default */
+    transform: translateX(10px); /* Start slightly to the right */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Do not block clicks when hidden */
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.node-item:hover .node-actions {
+    opacity: 1; /* Visible on hover */
+    transform: translateX(0); /* Slide into view */
+    pointer-events: auto; /* Enable clicks */
+}
+
+
+.action-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+    transition: transform 0.2s ease;
+}
+
+.action-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Icon colors */
+.add-icon {
+    filter: invert(70%) sepia(80%) saturate(800%) hue-rotate(80deg) brightness(120%) contrast(100%);
+}
+
+.delete-icon {
+    filter: invert(30%) sepia(90%) saturate(1000%) hue-rotate(330deg) brightness(100%) contrast(100%);
+}
+
+.children-container {
+    margin-left: 20px;
+    padding-left: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Darker dashed line for children */
 }
