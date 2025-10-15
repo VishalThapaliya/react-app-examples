@@ -5,7 +5,10 @@ import Footer from '../../components/layout/footer/Footer';
 
 // images
 import imageGradients from '../../assets/images/image_gradient_generator.png';
+import imageAvatarGenerator from '../../assets/images/image_avatar_generator.png';
+import imageFileFolderExplorer from '../../assets/images/image_file_folder_explorer.png';
 import appImage from '../../assets/images/react.svg';
+
 
 
 const applications = [
@@ -26,19 +29,19 @@ const applications = [
     description: 'Generate different types of avatar image at a signle place, and download it on just a click.',
     category: 'productivity',
     tags: ['React', 'JavaScript', 'CSS'],
-    image: `${appImage}`,
+    image: `${imageAvatarGenerator}`,
     demoUrl: '/applications/avatar-generator',
     githubUrl: 'https://github.com/example/ecommerce',
     featured: true
   },
   {
     id: 3,
-    title: 'Weather Application',
-    description: 'Beautiful weather app with location-based forecasts, interactive maps, and detailed weather analytics.',
+    title: 'File/Folder Explorer',
+    description: 'A file explorer app to showcase and manage your project structure',
     category: 'utility',
-    tags: ['React', 'API Integration', 'Charts.js', 'Geolocation'],
-    image: `${appImage}`,
-    demoUrl: '/apps/weather',
+    tags: ['React', 'JavaScript', 'CSS', 'VSCode'],
+    image: `${imageFileFolderExplorer}`,
+    demoUrl: '/apps/file-folder-explorer',
     githubUrl: 'https://github.com/example/weather',
     featured: true
   },
@@ -265,8 +268,8 @@ const ApplicationsPage = () => {
                     <img src={image} alt="title" />
                     <div className="app-overlay">
                       <div className="app-actions">
-                        <a href={demoUrl} className="btn-demo">Live Demo</a>
-                        <a href={githubUrl} className="btn-code" target='_blank'>View Demo</a>
+                        <a href={demoUrl} className="btn-demo" target='_blank'>Live Demo</a>
+                        <a href={githubUrl} className="btn-code" target='_blank'>View Code</a>
                       </div>
                     </div>
                   </div>
