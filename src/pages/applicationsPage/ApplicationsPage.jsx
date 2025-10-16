@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ApplicationsPage.css';
 import Header from '../../components/layout/header/Header';
 import Footer from '../../components/layout/footer/Footer';
@@ -19,7 +20,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'JavaScript', 'CSS'],
     image: `${imageGradients}`,
-    demoUrl: '~/applications/gradient-generator',
+    demoUrl: '/applications/gradient-generator',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
@@ -30,7 +31,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'JavaScript', 'CSS'],
     image: `${imageAvatarGenerator}`,
-    demoUrl: '~/applications/avatar-generator',
+    demoUrl: '/applications/avatar-generator',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/gradientGenerator',
     featured: true
   },
@@ -41,7 +42,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'JavaScript', 'CSS', 'VSCode'],
     image: `${imageFileFolderExplorer}`,
-    demoUrl: '~/applications/file-folder-explorer',
+    demoUrl: '/applications/file-folder-explorer',
     githubUrl: 'https://github.com/VishalThapaliya/react-app-examples/tree/main/src/featuredApps/fileFolderExplorer',
     featured: true
   },
@@ -52,7 +53,7 @@ const applications = [
     category: 'social',
     tags: ['React', 'Firebase', 'PWA', 'Real-time'],
     image: `${appImage}`,
-    demoUrl: '/apps/social-feed',
+    demoUrl: '/applications/social-feed',
     githubUrl: 'https://github.com/example/social-feed',
     featured: true
   },
@@ -63,7 +64,7 @@ const applications = [
     category: 'dashboard',
     tags: ['React', 'D3.js', 'Charts', 'Analytics'],
     image: `${appImage}`,
-    demoUrl: '/apps/analytics',
+    demoUrl: '/applications/analytics',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -74,7 +75,7 @@ const applications = [
     category: 'portfolio',
     tags: ['React', 'Framer Motion', 'CSS Grid', 'Responsive'],
     image: `${appImage}`,
-    demoUrl: '/apps/portfolio',
+    demoUrl: '/applications/portfolio',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -85,7 +86,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'Draft.js', 'Cloud Storage', 'Markdown'],
     image: `${appImage}`,
-    demoUrl: '/apps/notes',
+    demoUrl: '/applications/notes',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -96,7 +97,7 @@ const applications = [
     category: 'social',
     tags: ['React', 'Socket.io', 'Real-time', 'File Upload'],
     image: `${appImage}`,
-    demoUrl: '/apps/chat',
+    demoUrl: '/applications/chat',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -108,7 +109,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'Chart.js', 'Local Storage', 'PWA'],
     image: `${appImage}`,
-    demoUrl: '/apps/budget-tracker',
+    demoUrl: '/applications/budget-tracker',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -119,7 +120,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'Context API', 'Local Storage', 'PWA'],
     image: `${appImage}`,
-    demoUrl: '/apps/recipe-manager',
+    demoUrl: '/applications/recipe-manager',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -130,7 +131,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'Chart.js', 'PWA', 'Fitness API'],
     image: `${appImage}`,
-    demoUrl: '/apps/fitness-tracker',
+    demoUrl: '/applications/fitness-tracker',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -141,7 +142,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'Monaco Editor', 'Search', 'Tags'],
     image: `${appImage}`,
-    demoUrl: '/apps/code-snippets',
+    demoUrl: '/applications/code-snippets',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -152,7 +153,7 @@ const applications = [
     category: 'utility',
     tags: ['React', 'Web Audio API', 'Visualizations', 'PWA'],
     image: `${appImage}`,
-    demoUrl: '/apps/music-player',
+    demoUrl: '/applications/music-player',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   },
@@ -163,7 +164,7 @@ const applications = [
     category: 'productivity',
     tags: ['React', 'PDF Generation', 'Templates', 'Client Management'],
     image: `${appImage}`,
-    demoUrl: '/apps/invoice-generator',
+    demoUrl: '/applications/invoice-generator',
     githubUrl: 'https://github.com/VishalThapaliya',
     featured: false
   }
@@ -265,10 +266,10 @@ const ApplicationsPage = () => {
                   { featured && <div className='featured-badge'>Featured</div> }
 
                   <div className="app-image">
-                    <img src={image} alt="title" />
+                    <img src={image} alt={title} />
                     <div className="app-overlay">
                       <div className="app-actions">
-                        <a href={demoUrl} className="btn-demo" target='_blank'>Live Demo</a>
+                        <Link to={demoUrl} className='btn-demo'>Live Demo</Link>
                         <a href={githubUrl} className="btn-code" target='_blank'>View Code</a>
                       </div>
                     </div>

@@ -25,6 +25,9 @@ const App = () => {
         <Route path='/applications/calculator' element={<CalculatorApp />} />
         <Route path='/applications/avatar-generator' element={<AvatarGeneratorApp />}/>
         <Route path='/applications/file-folder-explorer' element={<FileFolderExplorerApp />}/>
+
+        {/* Handle 404 pages */}
+        <Route path='*' element={<div>404 Not Found</div>} />
       </Routes>
     </Router>
   )
